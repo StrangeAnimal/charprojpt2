@@ -2,10 +2,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <string>
+#include <string.h>
 #include <vector>
 #include <cmath>
-
+#include <sstream>
 
 
 
@@ -20,7 +20,7 @@ int generatearay(int number,char* chararr);
 int printarray(char* charry, int numchars);
 void printCombinations(const std::vector<int>& numbers, int size, std::vector<int>& line, std::string& comparearray);
 void search(char* chararr, std::string comparr,int size);
-
+void perams(int argc, char* argv[], int& numberofchars, int& size);
 
 
 
@@ -170,6 +170,40 @@ void search(char* chararr, std::string comparr,int size);
     	}
     	
     	
+    	void perams(int argc, char* argv[], int& numberofchars, int& size){
+
+    		for(int counter=0;counter<argc;counter++) {
+
+    						if( strcmp( argv[counter], "-n") == 0){
+
+    							stringstream arg (argv[counter + 1]);
+
+    							arg >> numberofchars;
+
+    						}
+
+    						if( strcmp( argv[counter], "-t") == 0){
+
+    											stringstream arg (argv[counter + 1]);
+
+    											arg >> size;
+
+    										}
+
+
+
+    					}
+
+
+
+
+
+
+    	}
+
+
+
+
     	
     	
     	
