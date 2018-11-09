@@ -22,7 +22,7 @@ int main(int argc, char* argv[]) {
 			int size =0;
 			int numberofchars = 0;
 			char *chararray;
-			int timelast;
+			double timelast;
 			std::string charcompare;
 
 
