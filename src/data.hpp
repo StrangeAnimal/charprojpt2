@@ -113,7 +113,7 @@ void perams(int argc, char* argv[], int& numberofchars, int& size);
 
     			number = countSubstring(randomstring, substring);
     	        total = total + number;
-    			cout << substring << ", "<< number <<'\n';
+    			//cout << substring << ", "<< number <<'\n';
     			analysis << substring << ", "<< number <<'\n';
     			a = a+size;
 
@@ -128,8 +128,8 @@ void perams(int argc, char* argv[], int& numberofchars, int& size);
     	{
 
     	    int count = 0;
-    	    for (size_t offset = str.find(sub); offset != std::string::npos;
-    		 offset = str.find(sub, offset + sub.length()))
+    	    for ( int offset = str.find(sub); offset != std::string::npos; offset = str.find(sub, offset + 1)) //start at the first instance, loop until the offset hits the end of the string
+    	    	// increment to the next instance look for sub starting 1 further on to prevent finding the same string again
     	    {
     	        ++count;
     	    }
@@ -138,11 +138,13 @@ void perams(int argc, char* argv[], int& numberofchars, int& size);
     	
     	void printCombinations(const std::vector<int>& numbers, int size, std::vector<int>& line, std::string &comparearray) {
 
-
+//numbers are the numbers to iterate through
+//line is the vector to put the combinations in
     	    for (unsigned i = 0; i < numbers.size(); i++) {
 
     	        line.push_back(numbers[i]);
     	        if (size <= 1) { // Condition that prevents infinite loop in recursion
+
     	        	for (const int j : line){
     	        	                switch(j){
 

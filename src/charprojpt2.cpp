@@ -33,7 +33,7 @@ int main(int argc, char* argv[]) {
 
 			perams(argc,argv,numberofchars,size);
 
-			timelast = (std::clock() - start) / (double)(CLOCKS_PER_SEC / 1000);
+			timelast = (std::clock()) / (double)(CLOCKS_PER_SEC / 1000);
 
 			statfile << "Argument Parsing," << timelast - start << " ms" << "\n";
 

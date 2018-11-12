@@ -1,5 +1,5 @@
-Argument Parsing,0 ms
+Argument Parsing,1 ms
 Generate Random,0 ms
-Print Array,220 ms
-Generate Combinations,0 ms
-Search Array,595 ms
+Print Array,6 ms
+Generate Combinations,2 ms
+Search Array,3 ms
