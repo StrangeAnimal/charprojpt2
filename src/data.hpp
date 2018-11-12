@@ -91,6 +91,8 @@ void perams(int argc, char* argv[], int& numberofchars, int& size);
     	
     	void search(char* chararr, std::string comparr,int size){
 
+    		std::ofstream analysis;
+    		analysis.open ("analysis.csv");
     		std::string randomstring = chararr;
     		std::string substring;
 
@@ -112,12 +114,13 @@ void perams(int argc, char* argv[], int& numberofchars, int& size);
     			number = countSubstring(randomstring, substring);
     	        total = total + number;
     			cout << substring << ", "<< number <<'\n';
-
+    			analysis << substring << ", "<< number <<'\n';
     			a = a+size;
 
 
     		}
     	      cout << total;
+    	      analysis.close();
 
     	}
     	

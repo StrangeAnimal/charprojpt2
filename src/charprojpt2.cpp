@@ -15,7 +15,9 @@ using namespace std;
 
 int main(int argc, char* argv[]) {
 	std::ofstream statfile;
+
 	statfile.open ("stats.csv");
+
 
 	std::vector<int> numbers = {0, 1, 2, 3};
 			std::vector<int> line;
@@ -55,5 +57,6 @@ int main(int argc, char* argv[]) {
     statfile << "Search Array," << (std::clock() - timelast) / (double)(CLOCKS_PER_SEC / 1000) << " ms" << "\n";
         delete chararray;
         statfile.close();
+
 		return 0;
 }
