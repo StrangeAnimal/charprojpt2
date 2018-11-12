@@ -114,7 +114,7 @@ void perams(int argc, char* argv[], int& numberofchars, int& size);
     			number = countSubstring(randomstring, substring);
     	        total = total + number;
     			//cout << substring << ", "<< number <<'\n';
-    			analysis << substring << ", "<< number <<'\n';
+    			analysis << substring << ", "<< number <<'\n'; //print to file
     			a = a+size;
 
 
@@ -143,9 +143,9 @@ void perams(int argc, char* argv[], int& numberofchars, int& size);
     	    for (unsigned i = 0; i < numbers.size(); i++) {
 
     	        line.push_back(numbers[i]);
-    	        if (size <= 1) { // Condition that prevents infinite loop in recursion
+    	        if (size <= 1) { // Condition that prevents infinite loop in recursion, when recursed in enough times
 
-    	        	for (const int j : line){
+    	        	for (const int j : line){ //loop through line
     	        	                switch(j){
 
     	        	                case 0:comparearray.append("A");
@@ -169,8 +169,9 @@ void perams(int argc, char* argv[], int& numberofchars, int& size);
 
     	        	            line.erase(line.end() - 1);
     	        } else {
-    	            printCombinations(numbers, size - 1, line,comparearray); // Recursion happens here
-    	            line.erase(line.end() - 1);
+    	            printCombinations(numbers, size - 1, line,comparearray); // Recursion happens here recurrs as many times as the number of chars in the iteration eg 4 for AAAA AAAC ...
+    	            line.erase(line.end() - 1);       //creates a stack where each level on the stack is for one part on the number
+
     	        }
     	    }
     	}
@@ -180,17 +181,17 @@ void perams(int argc, char* argv[], int& numberofchars, int& size);
 
     		for(int counter=0;counter<argc;counter++) {
 
-    						if( strcmp( argv[counter], "-n") == 0){
+    						if( strcmp( argv[counter], "-n") == 0){ //find -n
 
-    							stringstream arg (argv[counter + 1]);
+    							stringstream arg (argv[counter + 1]); // assume the next string contains the number
 
     							arg >> numberofchars;
 
     						}
 
-    						if( strcmp( argv[counter], "-t") == 0){
+    						if( strcmp( argv[counter], "-t") == 0){ //find -t
 
-    											stringstream arg (argv[counter + 1]);
+    											stringstream arg (argv[counter + 1]);   //assume the next string contains the value
 
     											arg >> size;
 
