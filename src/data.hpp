@@ -21,7 +21,7 @@ int generatearay(int number,char* chararr);
 int printarray(char* charry, int numchars);
 void printCombinations(const std::vector<int>& numbers, int size, std::vector<int>& line, std::string& comparearray);
 void search(char* chararr, std::string comparr,int size);
-void perams(int argc, char* argv[], int& numberofchars, int& size);
+void perams(int argc, char* argv[], long long& numberofchars, int& size);
 
 
 
@@ -119,7 +119,7 @@ void perams(int argc, char* argv[], int& numberofchars, int& size);
 
 
     		}
-    	      cout << total;
+    	      //cout << total;
     	      analysis.close();
 
     	}
@@ -177,7 +177,7 @@ void perams(int argc, char* argv[], int& numberofchars, int& size);
     	}
     	
     	
-    	void perams(int argc, char* argv[], int& numberofchars, int& size){
+    	void perams(int argc, char* argv[], long long& numberofchars, int& size){
 
     		for(int counter=0;counter<argc;counter++) {
 
