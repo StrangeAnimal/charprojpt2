@@ -38,18 +38,18 @@ void perams(int argc, char* argv[], long long& numberofchars, int& size);
     	}
     	
     	 int generatearay(int number, char* chararr){
-    		srand(time(NULL));
-    		int y=0;
+    		srand(time(NULL)); //seed the random number generator
+    		int y=0; //a number to store the random number
 
-    		for(int x=0;x< number;x++){
+    		for(int x=0;x< number;x++){ //loop as many times as the number of charachters to be generated.
 
-    			y = rand() %4;
+    			y = rand() %4; //generate a random number between 0 and 3
 
     			switch(y){
 
     			case 0: chararr[x] = 'A';
     	        break;
-    			case 1: chararr[x] = 'C';
+    			case 1: chararr[x] = 'C';  //use switch case to change number to character
     	        break;
     			case 2: chararr[x] = 'T';
     	        break;
@@ -78,13 +78,13 @@ void perams(int argc, char* argv[], long long& numberofchars, int& size);
     	
     	int printarray(char* charry, int numchars){
 
-    		for(int x=0;x<numchars;x++){
+    		for(int x=0;x<numchars;x++){ //loop through each char in the array
 
-    			cout << charry[x];
+    			cout << charry[x];  //print the current char
 
 
     		}
-    	    cout <<'\n';
+    	    cout <<'\n'; //print a newline
 
     		return 0;
     	}
@@ -92,16 +92,16 @@ void perams(int argc, char* argv[], long long& numberofchars, int& size);
     	void search(char* chararr, std::string comparr,int size){
 
     		std::ofstream analysis;
-    		analysis.open ("analysis.csv");
-    		std::string randomstring = chararr;
-    		std::string substring;
+    		analysis.open ("analysis.csv"); //open the file
+    		std::string randomstring = chararr; //convert the array to a string for easier use.
+    		std::string substring; //a substring variable to store the substring to be searched for
 
 
     		int a=0;
 
     		int number=0;
     		int total=0;
-    	    float looptimes = pow(4,size);
+    	    float looptimes = pow(4,size); //calculate the number of times to loop
 
     		for(int x=0;x<looptimes;x++){
 
@@ -109,13 +109,13 @@ void perams(int argc, char* argv[], long long& numberofchars, int& size);
 
 
 
-    			substring = comparr.substr(a,size);
+    			substring = comparr.substr(a,size); //get part of the list of every combination
 
-    			number = countSubstring(randomstring, substring);
+    			number = countSubstring(randomstring, substring); //count the occurrences
     	        total = total + number;
     			//cout << substring << ", "<< number <<'\n';
-    			analysis << substring << ", "<< number <<'\n'; //print to file
-    			a = a+size;
+    			analysis << substring << ", "<< number << endl; //print to file
+    			a = a+size;  //Increase a to get the next substring
 
 
     		}
